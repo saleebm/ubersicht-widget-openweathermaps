@@ -219,13 +219,17 @@ export const render = (
             {Array.isArray(data.hourly) &&
               data.hourly.map((hourData, index) => {
                 const date = new Date(hourData.dt * 1000)
-                const hour = date.getHours()
                 return index < 6 ? (
                   <div
                     key={hourData.dt}
                     className={everyHour}
                   >
-                    <p className={everyHourTime}>{hour}</p>
+                    <p className={everyHourTime}>
+                      {new Intl.DateTimeFormat('en-US', {
+                        dayPeriod: 'narrow',
+                        hour: 'numeric',
+                      }).format(date)}
+                    </p>
                     <p className={everyHourTemp}>
                       {hourData.temp.toFixed(1)}
                     </p>
