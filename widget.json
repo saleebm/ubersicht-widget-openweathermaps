@@ -1,0 +1,6 @@
+{
+    "name": "OpenWeatherMaps Widget",
+    "description": "gets weather from openweathermaps since mydarksky's api shutdown",
+    "author": "branch",
+    "email": "saleebmina@copt.dev"
+}
