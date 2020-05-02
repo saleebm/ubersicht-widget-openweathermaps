@@ -1,4 +1,4 @@
-# Credits where it is due:
+# Acknowledgements:
 
 Thank you [Li Xueli](https://github.com/mixj93) for the base code found [here](https://github.com/mixj93/uebersicht-weather-widget). I simply modified it so that it would work with Open Weather Maps since the DarkSky API has gone corporate ([see issue here](https://github.com/mixj93/uebersicht-weather-widget/issues/2)). I also removed the toggle to open and close the daily weather.
 
