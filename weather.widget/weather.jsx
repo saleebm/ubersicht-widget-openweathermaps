@@ -372,6 +372,7 @@ const hourly = css`
 
 const everyHour = css`
   text-align: center;
+  padding: 0 0.1rem;
 `
 
 const everyHourTime = css`
