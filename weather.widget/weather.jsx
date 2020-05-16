@@ -249,7 +249,9 @@ export const render = (
                       {'rain' in hourData &&
                       !!hourData.rain &&
                       '1h' in hourData.rain
-                        ? hourData.rain['1h'].toFixed(0)
+                        ? Number(
+                            hourData.rain['1h'].toFixed(2),
+                          ) * 100
                         : 0}
                       %
                     </p>
