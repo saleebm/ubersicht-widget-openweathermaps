@@ -18,6 +18,8 @@ const POSITION = {
   marginX: 20,
   marginY: 20,
 }
+// how likely do you think it will rain in your area...
+const CONFIDENCE_OF_RAINFALL = 0.5
 /***********************Options***********************/
 
 let fontColor
@@ -249,9 +251,13 @@ export const render = (
                       {'rain' in hourData &&
                       !!hourData.rain &&
                       '1h' in hourData.rain
-                        ? Number(
-                            hourData.rain['1h'].toFixed(2),
-                          ) * 100
+                        ? Math.min(
+                            Number(
+                              hourData.rain['1h'] *
+                                CONFIDENCE_OF_RAINFALL,
+                            ).toFixed(2) * 100,
+                            100,
+                          )
                         : 0}
                       %
                     </p>
