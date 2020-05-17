@@ -254,8 +254,9 @@ export const render = (
                         ? Math.min(
                             Number(
                               hourData.rain['1h'] *
-                                CONFIDENCE_OF_RAINFALL,
-                            ).toFixed(2) * 100,
+                                CONFIDENCE_OF_RAINFALL *
+                                100,
+                            ).toFixed(2),
                             100,
                           )
                         : 0}
@@ -381,11 +382,17 @@ const hourly = css`
 const everyHour = css`
   text-align: center;
   padding: 0 0.1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: space-around;
+  white-space: nowrap;
 `
 
 const everyHourTime = css`
   color: ${fontSubColor};
-  margin: 0 0 4px 0;
+  margin: 0 1px 4px;
+  flex-grow: 1;
 `
 
 const everyHourTemp = css`
